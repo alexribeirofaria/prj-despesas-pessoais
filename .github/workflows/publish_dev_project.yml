@@ -1,4 +1,4 @@
-name: Deploy Development AWS EC2 Server
+name: Deploy Development Project in AWS
 on:
   push:
      branches: 
