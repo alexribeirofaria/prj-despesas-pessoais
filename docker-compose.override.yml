@@ -14,7 +14,7 @@ services:
       - ${LOCALAPPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
       - ./AngularApp/dist:/app/wwwroot
       - ./Despesas.WebApi/appsettings.docker.json:/app/appsettings.json
-      - ./Despesas.WebApi/appsettings.docker.json:/app/appsettings.develpment.json
+      - ./Despesas.WebApi/appsettings.docker.develpment.json:/app/appsettings.develpment.json
     deploy:
       update_config:
         order: start-first
