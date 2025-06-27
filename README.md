@@ -86,7 +86,7 @@ Make sure have instaled tool ReportGenerator, if not Run `dotnet tool install --
 
 Run  `./generate_coverage_report.ps1` if using windows, or Run `./generate_coverage_report.sh` if using linux. The Report will open in default browser automatically.
 
-[Overview Report Coverage Results](http://alexfariakof.com:42536/coveragereport/index.html) 
+[Overview Report Coverage Results](https://alexfariakof.com:42535/coveragereport/index.html) 
 ![reportTestCoverage](https://github.com/alexfariakof/despesas-backend-api-net-core/assets/42475620/afd1b5e4-5a2f-490c-bf4f-a530df41c1ae)
 
 ## Security Settings
@@ -118,6 +118,6 @@ Run  `./generate_coverage_report.ps1` if using windows, or Run `./generate_cover
 
 SonarCloud is a cloud-based static code analysis platform that helps development teams maintain code quality and identify issues early in the software development process. It offers automated code review, continuous inspection, and code analytics. SonarCloud scans your code for bugs, vulnerabilities, and code smells, providing actionable feedback to improve code quality and security. It is an essential tool for ensuring that your software projects are maintainable, reliable, and secure. via [Sonar Cloud](https://sonarcloud.io/).
 
-This project Overview in Sonar Cloud can be access at [Overview Project in Sonar Cloud](https://sonarcloud.io/project/overview?id=alexfariakof_app-despesas-pessoais)) 
+This project Overview in Sonar Cloud can be access at [Overview Project in Sonar Cloud](https://sonarcloud.io/project/overview?id=alexribeirofaria_prj-despesas-pessoais)) 
 ![sonarcloud](https://github.com/alexfariakof/despesas-backend-api-net-core/assets/42475620/fd4b2bc7-c254-438b-8194-a07ec62da86b)
 
