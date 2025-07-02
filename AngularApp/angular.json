@@ -124,6 +124,19 @@
                 }
               ]
             },
+            "mobile": {
+              "optimization": true,
+              "sourceMap": false,
+              "aot": true,
+              "extractLicenses": true,
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "./src/environments/environment.ts",
+                  "with": "./src/environments/environment.mobile.ts"
+                }
+              ]
+            },
             "local-development": {
               "buildOptimizer": true,
               "optimization": false,
