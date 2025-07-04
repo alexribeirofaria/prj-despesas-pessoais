@@ -1,14 +1,17 @@
 {
   "name": "despesas-frontend-angular",
   "version": "2.0.0",
+  "private": true,
   "workspaces": [
-    "mobile"
+    "mobile/*"
   ],
   "scripts": {
     "ng": "ng",
     "start": "run-script-os",
     "build": "ng build",
     "build:dev": "ng build --configuration=development",
+    "build:android": "npm run build:mobile --workspace=mobile/android",
+    "build:ios": "npm run build:mobile --workspace=mobile/ios",
     "build:mobile": "ng build --configuration=mobile --output-path=www",
     "watch": "ng build --watch --configuration development",
     "test": "set BROWSER=ChromeHeadless && ng test --browsers=ChromeHeadless --no-watch",
@@ -16,12 +19,11 @@
     "test:coverage": "ng test --code-coverage --browsers=ChromeHeadless --no-watch",
     "test:watch": "ng test --code-coverage --browsers=ChromeHeadless --watch",
     "prestart": "node aspnetcore-https",
-    "start:android": "npx cap run android",
-    "start:ios": "npx cap open ios",
+    "start:android": "npx cap sync android && npx cap run android",
+    "start:ios": "npx cap open ios --workspace=mobile/ios",
     "start:windows": "ng serve --ssl --configuration local-development --ssl-cert \"%LOCALAPPDATA%\\ASP.NET\\https\\%npm_package_name%.pem\" --ssl-key \"%LOCALAPPDATA%\\ASP.NET\\https\\%npm_package_name%.key\" --host=127.0.0.1",
     "start:default": "ng serve --ssl --configuration local-development --ssl-cert \"$HOME/.aspnet/https/${npm_package_name}.pem\" --ssl-key \"$HOME/.aspnet/https/${npm_package_name}.key\" --host=127.0.0.1"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^18.0.3",
     "@angular/cdk": "^18.0.3",
@@ -64,14 +66,6 @@
     "@angular/cli": "^18.0.3",
     "@angular/compiler-cli": "^18.0.0",
     "@angular/localize": "^18.0.3",
-    "@capacitor/android": "^7.4.0",
-    "@capacitor/app": "^7.0.1",
-    "@capacitor/cli": "^7.4.0",
-    "@capacitor/core": "^7.4.0",
-    "@capacitor/haptics": "^7.0.1",
-    "@capacitor/ios": "7.4.0",
-    "@capacitor/keyboard": "^7.0.1",
-    "@capacitor/status-bar": "^7.0.1",
     "@types/bootstrap": "^5.2.6",
     "@types/jasmine": "~4.3.0",
     "@types/jquery": "^3.5.27",

@@ -1,0 +1,17 @@
+{
+  "name": "despesas-frontend-android",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:mobile": "ng build --configuration=mobile --output-path=www"
+  },
+  "dependencies": {
+    "@capacitor/android": "4.8.2",
+    "@capacitor/app": "^4.1.1",
+    "@capacitor/cli": "^4.8.2",
+    "@capacitor/core": "^4.8.2",
+    "@capacitor/haptics": "^4.0.1",
+    "@capacitor/keyboard": "^4.1.1",
+    "@capacitor/status-bar": "^4.1.1"
+  }
+}
