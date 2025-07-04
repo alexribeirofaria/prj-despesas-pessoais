@@ -1,4 +1,4 @@
-package alexfariakof.com.mobile;
+package alexfariakof.com;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">despesas-frontend-mobile</string>
     <string name="title_activity_main">despesas-frontend-mobile</string>
-    <string name="package_name">alexfariakof.com.mobile</string>
-    <string name="custom_url_scheme">alexfariakof.com.mobile</string>
+    <string name="package_name">alexfariakof.com</string>
+    <string name="custom_url_scheme">alexfariakof.com</string>
 </resources>
