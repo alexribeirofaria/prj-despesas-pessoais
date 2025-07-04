@@ -15,7 +15,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "despesas-frontend-mobile",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -125,6 +125,7 @@
               ]
             },
             "mobile": {
+              "outputPath": "www",
               "optimization": true,
               "sourceMap": false,
               "aot": true,

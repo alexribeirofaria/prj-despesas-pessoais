@@ -44,3 +44,4 @@ Thumbs.db
 obj/**
 !sonar-project.properties
 app-mobile/**
+www/**
