@@ -1,0 +1,13 @@
+1. 📥 Instale o Xcode Completo
+Abra o Terminal e digite:
+  open -a "App Store"
+
+Depois:
+  Pesquise por Xcode
+  Clique em Instalar (atenção: ~10-15 GB)
+
+2. 🛠️ Após instalar, ative o Xcode como diretório de desenvolvimento:
+  sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+
+3. ✅ Aceite os termos de uso do Xcode (se necessário):
+  sudo xcodebuild -license accept
