@@ -43,5 +43,6 @@ Thumbs.db
 .angular/**
 obj/**
 !sonar-project.properties
-app-mobile/**
 www/**
+!**/packages/android
+!**/packages/ios

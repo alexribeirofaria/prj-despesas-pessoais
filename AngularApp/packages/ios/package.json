@@ -1,8 +1,8 @@
 {
-  "name": "despesas-frontend-ios",
+  "name": "ios",
   "version": "1.0.0",
-  "private": true,
-    "scripts": {
+  "main": "index.js",
+"scripts": {
     "build:mobile": "ng build --configuration=mobile --output-path=www"
   },
   "dependencies": {
@@ -13,5 +13,9 @@
     "@capacitor/ios": "7.4.0",
     "@capacitor/keyboard": "^7.0.1",
     "@capacitor/status-bar": "^7.0.1"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

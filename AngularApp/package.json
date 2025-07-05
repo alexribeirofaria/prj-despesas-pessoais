@@ -3,15 +3,15 @@
   "version": "2.0.0",
   "private": true,
   "workspaces": [
-    "mobile/*"
+    "packages/*"
   ],
   "scripts": {
     "ng": "ng",
     "start": "run-script-os",
     "build": "ng build",
     "build:dev": "ng build --configuration=development",
-    "build:android": "npm run build:mobile --workspace=mobile/android",
-    "build:ios": "npm run build:mobile --workspace=mobile/ios",
+    "build:android": "npm run build:mobile --workspace=packages/android",
+    "build:ios": "npm run build:mobile --workspace=packages/ios",
     "build:mobile": "ng build --configuration=mobile --output-path=www",
     "watch": "ng build --watch --configuration development",
     "test": "set BROWSER=ChromeHeadless && ng test --browsers=ChromeHeadless --no-watch",
@@ -20,7 +20,7 @@
     "test:watch": "ng test --code-coverage --browsers=ChromeHeadless --watch",
     "prestart": "node aspnetcore-https",
     "start:android": "npx cap sync android && npx cap run android",
-    "start:ios": "npx cap open ios --workspace=mobile/ios",
+    "start:ios": "npx cap sync ios && npx cap run ios",
     "start:windows": "ng serve --ssl --configuration local-development --ssl-cert \"%LOCALAPPDATA%\\ASP.NET\\https\\%npm_package_name%.pem\" --ssl-key \"%LOCALAPPDATA%\\ASP.NET\\https\\%npm_package_name%.key\" --host=127.0.0.1",
     "start:default": "ng serve --ssl --configuration local-development --ssl-cert \"$HOME/.aspnet/https/${npm_package_name}.pem\" --ssl-key \"$HOME/.aspnet/https/${npm_package_name}.key\" --host=127.0.0.1"
   },
