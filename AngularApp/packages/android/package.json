@@ -1,7 +1,7 @@
 {
-  "name": "despesas-frontend-android",
+  "name": "android",
   "version": "1.0.0",
-  "private": true,
+  "main": "index.js",
   "scripts": {
     "build:mobile": "ng build --configuration=mobile --output-path=www"
   },
@@ -13,5 +13,9 @@
     "@capacitor/haptics": "^4.0.1",
     "@capacitor/keyboard": "^4.1.1",
     "@capacitor/status-bar": "^4.1.1"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

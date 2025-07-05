@@ -2,12 +2,6 @@
   "folders": [
     {
       "path": "."
-    },
-    {
-      "path": "mobile/android"
-    },
-    {
-      "path": "mobile/ios"
     }
   ],
   "settings": {
