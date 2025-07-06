@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/ios",
+    "packages/android"
   ],
   "scripts": {
     "ng": "ng",
@@ -62,6 +63,13 @@
     "zone.js": "~0.14.7"
   },
   "devDependencies": {
+    "@capacitor/app": "^7.0.1",
+    "@capacitor/cli": "^7.4.0",
+    "@capacitor/core": "^7.4.0",
+    "@capacitor/haptics": "^7.0.1",
+    "@capacitor/ios": "7.4.0",
+    "@capacitor/keyboard": "^7.0.1",
+    "@capacitor/status-bar": "^7.0.1",
     "@angular-devkit/build-angular": "^18.0.4",
     "@angular/cli": "^18.0.3",
     "@angular/compiler-cli": "^18.0.0",

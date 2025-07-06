@@ -127,9 +127,6 @@
             "mobile": {
               "outputPath": "www",
               "optimization": true,
-              "sourceMap": false,
-              "aot": true,
-              "extractLicenses": true,
               "outputHashing": "all",
               "fileReplacements": [
                 {

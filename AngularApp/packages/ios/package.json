@@ -1,7 +1,7 @@
 {
   "name": "ios",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
 "scripts": {
     "build:mobile": "ng build --configuration=mobile --output-path=www"
   },
