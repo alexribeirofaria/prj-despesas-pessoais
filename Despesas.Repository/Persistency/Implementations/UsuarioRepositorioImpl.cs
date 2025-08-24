@@ -1,5 +1,5 @@
-﻿using Domain.Entities;
-using Domain.Entities.ValueObjects;
+﻿using Domain.Core.ValueObject;
+using Domain.Entities;
 using Repository.Abastractions;
 using Repository.Persistency.Generic;
 
@@ -14,12 +14,12 @@ public class UsuarioRepositorioImpl : BaseRepository<Usuario>, IRepositorio<Usua
 
     public override void Insert(Usuario entity)
     {
-        var controleAcesso = new ControleAcesso();
-        controleAcesso.Usuario = entity;
-        controleAcesso.CreateAccount(entity, Guid.NewGuid().ToString().Substring(0, 8));
-        controleAcesso.Usuario.PerfilUsuario = Context.Set<PerfilUsuario>().First(perfil => perfil.Id.Equals(controleAcesso.Usuario.PerfilUsuario.Id));
-        controleAcesso.Usuario.Categorias.ToList().ForEach(c => c.TipoCategoria = Context.Set<TipoCategoria>().First(tc => tc.Id.Equals(c.TipoCategoria.Id)));
-        Context.Add(controleAcesso);
+        var acesso = new Acesso();
+        acesso.Usuario = entity;
+        acesso.CreateAccount(entity, Guid.NewGuid().ToString().Substring(0, 8));
+        acesso.Usuario.PerfilUsuario = Context.Set<PerfilUsuario>().First(perfil => perfil.Id.Equals(acesso.Usuario.PerfilUsuario.Id));
+        acesso.Usuario.Categorias.ToList().ForEach(c => c.TipoCategoria = Context.Set<TipoCategoria>().First(tc => tc.Id.Equals(c.TipoCategoria.Id)));
+        Context.Add(acesso);
         Context.SaveChanges();
     }
 

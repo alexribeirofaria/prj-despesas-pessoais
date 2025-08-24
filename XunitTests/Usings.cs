@@ -1,10 +1,9 @@
-﻿global using Domain.Entities;
-global using Moq;
+﻿global using Moq;
 global using Xunit;
+global using Domain.Entities;
 using AutoMapper;
-using Business.Authentication;
+using Despesas.Application.Authentication;
 using Despesas.Business.Authentication.Abstractions;
-using Domain.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -16,8 +15,9 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using Domain.Core.Aggreggates;
 
-public class Usings
+public sealed class Usings
 {
     private Usings() { }
 
@@ -52,7 +52,7 @@ public class Usings
     }
 
     public static Mock<IRepositorio<T>> MockRepositorio<T>(List<T> _dataSet)
-        where T : BaseModel
+        where T : BaseDomain
     {
         var _mock = new Mock<IRepositorio<T>>();
 

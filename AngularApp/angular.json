@@ -69,6 +69,7 @@
               "sourceMap": false,
               "aot": true,
               "extractLicenses": true,
+              "namedChunks": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -81,49 +82,20 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ]
-            },
-            "staging": {
-              "optimization": true,
-              "sourceMap": false,
-              "aot": true,
-              "extractLicenses": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "4mb",
-                  "maximumError": "4mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all",
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.staging.ts"
-                }
-              ]
+              "outputHashing": "all"
             },
             "development": {
               "optimization": true,
               "extractLicenses": false,
               "progress": true,
               "aot": true,
+              "namedChunks": true,
+              "outputHashing": "all",
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "3.5mb",
+                  "maximumError": "3.5mb"
                 },
                 {
                   "type": "anyComponentStyle",
@@ -148,6 +120,58 @@
               "budgets": [
                 {
                   "type": "initial",
+                  "maximumWarning": "10mb",
+                  "maximumError": "10mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "10kb",
+                  "maximumError": "10kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.local.ts"
+                }
+              ]
+            },
+            "development-android": {
+              "outputPath": "www",
+              "optimization": true,
+              "sourceMap": false,
+              "aot": true,
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.android.local.ts"
+                }
+              ]
+            },
+            "development-ios": {
+              "outputPath": "www",
+              "optimization": true,
+              "sourceMap": false,
+              "aot": true,
+              "extractLicenses": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "production-android": {
+              "outputPath": "www",
+              "optimization": true,
+              "sourceMap": false,
+              "aot": true,
+              "extractLicenses": true,
+              "namedChunks": true,
+              "budgets": [
+                {
+                  "type": "initial",
                   "maximumWarning": "4mb",
                   "maximumError": "4mb"
                 },
@@ -157,35 +181,14 @@
                   "maximumError": "4kb"
                 }
               ],
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.dev.ts"
-                }
-              ]
-            },
-            "production-android": {
-              "outputPath": "wwww",
-              "optimization": true,
-              "sourceMap": false,
-              "aot": true,
-              "extractLicenses": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.mobile.ts"
-                }
-              ]
+              "outputHashing": "all"
             },
             "production-ios": {
               "outputPath": "www",
               "optimization": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.mobile.ts"
-                }
-              ]
+              "sourceMap": false,
+              "aot": true,
+              "extractLicenses": true
             }
           },
           "defaultConfiguration": "production"
@@ -197,26 +200,32 @@
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "angularapp:build:production"
-            },
-            "staging": {
-              "proxyConfig": "src/proxy.conf.js",
-              "buildTarget": "angularapp:build:staging"
-            },
-            "development": {
-              "proxyConfig": "src/proxy.conf.js",
-              "buildTarget": "angularapp:build:development"
-            },
-            "local-development": {
-              "proxyConfig": "src/proxy.conf.js",
-              "buildTarget": "angularapp:build:local-development"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"options": {
+						"headers": {
+							"Cross-Origin-Opener-Policy": "same-origin-allow-popups",
+							"Cross-Origin-Embedder-Policy": "unsafe-none"
+						}
+					},
+					"configurations": {
+						"production": {
+							"buildTarget": "angularapp:build:production"
+						},
+						"staging": {
+							"proxyConfig": "src/proxy.conf.js",
+							"buildTarget": "angularapp:build:staging"
+						},
+						"development": {
+							"proxyConfig": "src/proxy.conf.js",
+							"buildTarget": "angularapp:build:development"
+						},
+						"local-development": {
+							"proxyConfig": "src/proxy.conf.js",
+							"buildTarget": "angularapp:build:local-development"
+						}
+					},
+					"defaultConfiguration": "production"
+				},
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {

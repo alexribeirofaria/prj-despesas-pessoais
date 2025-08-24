@@ -1,6 +1,6 @@
 ﻿using Bogus;
-using Despesas.Business.Dtos;
-using Domain.Entities.ValueObjects;
+using Despesas.Application.Dtos;
+using Domain.Core.ValueObject;
 
 namespace __mock__.Entities;
 public sealed class UsuarioFaker

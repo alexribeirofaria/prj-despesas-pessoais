@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using __mock__.Entities;
 using AutoMapper;
-using Business.Abstractions;
-using Despesas.Business.Dtos;
-using Despesas.Business.Dtos.Profile;
 using Despesas.Backend.Controllers;
+using Despesas.Application.Abstractions;
+using Despesas.Application.Dtos;
+using Despesas.Application.Dtos.Profile;
 
-namespace XUnit.Api.Controllers;
+namespace Api.Controllers;
 
 public sealed class DespesaControllerTest
 {

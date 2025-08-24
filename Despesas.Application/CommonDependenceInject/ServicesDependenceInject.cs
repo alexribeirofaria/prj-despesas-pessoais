@@ -1,6 +1,7 @@
 ﻿using Despesas.Application.Abstractions;
 using Despesas.Application.Abstractions.Generic;
 using Despesas.Application.Dtos;
+using Despesas.Application.Dtos.Core;
 using Despesas.Application.Implementations;
 using Despesas.Infrastructure.Email;
 using Despesas.Infrastructure.Email.Abstractions;
@@ -24,10 +25,11 @@ public static class ServicesDependenceInject
 
     public static IServiceCollection AddServices(this IServiceCollection services)
     {
+
         services.AddScoped(typeof(IBusiness<CategoriaDto, Categoria>), typeof(CategoriaBusinessImpl<CategoriaDto>));
         services.AddScoped(typeof(IBusiness<DespesaDto, Despesa>), typeof(DespesaBusinessImpl<DespesaDto>));
         services.AddScoped(typeof(IBusiness<ReceitaDto, Receita>), typeof(ReceitaBusinessImpl<ReceitaDto>));
-        services.AddScoped(typeof(IControleAcessoBusiness<ControleAcessoDto, LoginDto>), typeof(ControleAcessoBusinessImpl<ControleAcessoDto, LoginDto>));
+        services.AddScoped(typeof(IAcessoBusiness<AcessoDto, LoginDto>), typeof(AcessoBusinessImpl<AcessoDto, LoginDto>));
         services.AddScoped(typeof(ILancamentoBusiness<LancamentoDto>), typeof(LancamentoBusinessImpl<LancamentoDto>));
         services.AddScoped(typeof(IUsuarioBusiness<UsuarioDto>), typeof(UsuarioBusinessImpl<UsuarioDto>));
         services.AddScoped(typeof(IImagemPerfilUsuarioBusiness<ImagemPerfilDto, UsuarioDto>), typeof(ImagemPerfilUsuarioBusinessImpl<ImagemPerfilDto, UsuarioDto>));
@@ -37,7 +39,7 @@ public static class ServicesDependenceInject
         services.AddScoped(typeof(IBusinessBase<DespesaDto, Despesa>), typeof(DespesaBusinessImpl<DespesaDto>));
         services.AddScoped(typeof(IBusinessBase<ReceitaDto, Receita>), typeof(ReceitaBusinessImpl<ReceitaDto>));
 
-        services.AddScoped(typeof(IControleAcessoBusiness<ControleAcessoDto, LoginDto>), typeof(ControleAcessoBusinessImpl<ControleAcessoDto, LoginDto>));
+        services.AddScoped(typeof(IAcessoBusiness<AcessoDto, LoginDto>), typeof(AcessoBusinessImpl<AcessoDto, LoginDto>));
         services.AddScoped(typeof(ILancamentoBusiness<LancamentoDto>), typeof(LancamentoBusinessImpl<LancamentoDto>));
         services.AddScoped(typeof(IUsuarioBusiness<UsuarioDto>), typeof(UsuarioBusinessImpl<UsuarioDto>));
         services.AddScoped(typeof(IImagemPerfilUsuarioBusiness<ImagemPerfilDto, UsuarioDto>), typeof(ImagemPerfilUsuarioBusinessImpl<ImagemPerfilDto, UsuarioDto>));
